@@ -18,7 +18,9 @@ import java.util.Map;
  * @author ASSOUMA
  */
 public class Service {
+    
     public  ArrayList<Medicaments> getListBlog(Map m){
+        
         ArrayList<Medicaments> listMedicaments = new ArrayList<>();
         ArrayList d = (ArrayList)m.get("Medicaments");
         
@@ -94,7 +96,7 @@ public class Service {
     public  ArrayList<String> getListConsultations(Map m){
         ArrayList<String> listMedicaments = new ArrayList<>();
         ArrayList d = (ArrayList)m.get("Consultation");
-        System.out.println("roooooooooot "+m);
+        System.out.println("root "+m);
         for(int i = 0; i<d.size();i++){
             Map f =  (Map) d.get(i);
             listMedicaments.add((Double)f.get("numC")+"");  
@@ -105,10 +107,6 @@ public class Service {
     public  ArrayList<String> getListPatients(Map m){
         ArrayList<String> listMedicaments = new ArrayList<>();
         ArrayList d = (ArrayList)m.get("Patients");
-        //System.out.println("roooooooooot "+d);
-        //Map f =  (Map) d.get(0);
-        //System.out.println("dddddddddddddd :::::::::"+d.size());
-
         for(int i = 0; i<d.size();i++){
             Map f =  (Map) d.get(i);
             listMedicaments.add((String)f.get("nom"));  

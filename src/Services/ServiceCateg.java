@@ -104,7 +104,7 @@ public class ServiceCateg {
 
     public boolean deleteCateg(Catégorie c) {
         
-         String url = Statics.BASE_URL + "/aide/del?id=" + c.getId();
+         String url = Statics.BASE_URL + "/DelCateg?id=" + c.getId();
                req.setUrl(url);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
@@ -119,7 +119,7 @@ public class ServiceCateg {
 
     public boolean editCateg(Catégorie c) {
     
-        String url = Statics.BASE_URL + "/aide/edit?id="+c.getId()+"&nom=" + c.getNom(); //création de l'URL
+        String url = Statics.BASE_URL + "/modiCat?id="+c.getId(); //création de l'URL
                req.setUrl(url);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override

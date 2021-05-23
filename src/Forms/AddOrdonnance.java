@@ -26,11 +26,14 @@ import java.util.Map;
  * @author ASSOUMA
  */
 public class AddOrdonnance extends BaseForm{
+    
     ComboBox<String> medicament;
     ComboBox<String> categorie;
     ComboBox<String> consultation;
     ComboBox<String> patient;
+    
     public AddOrdonnance(){
+        
         medicament = new ComboBox();
         categorie = new ComboBox();
         consultation = new ComboBox();
@@ -67,9 +70,7 @@ public class AddOrdonnance extends BaseForm{
             
           
             Button b = new Button("Ajouter");
-            
-           
-            //Label c = new Label("Nombre d'heures : "+e.getNbheures()+"");
+        
             
             WebService ws = new WebService();
             Map x = ws.getResponse("categories");
@@ -96,7 +97,6 @@ public class AddOrdonnance extends BaseForm{
              for (Medicaments e : listevents) {
                  medicament.addItem(e.getName());
              }
-           photos.add(nom);
            photos.add(l);
            photos.add(categorie);
            photos.add(medicaments);
@@ -105,13 +105,9 @@ public class AddOrdonnance extends BaseForm{
            photos.add(consultation);
            photos.add(patients);
            photos.add(patient);
+           photos.add(nom);
            photos.add(marque);
            photos.add(prix);
-           
-            
-            
-      
-            
             photos.add(sotck);
             photos.add(packets);
             photos.add(b);
@@ -132,24 +128,7 @@ public class AddOrdonnance extends BaseForm{
                 ListOrdonnances lp = new ListOrdonnances();
                 lp.show();
                 });
-            /**c.addPointerPressedListener(new ActionListener(){
-                @Override
-                public void actionPerformed(ActionEvent evt) {
-                    WebService ws = new WebService();
-                    String status = ws.getStatus("check/"+6+"/"+e.getId());
-                    if(status.equals("subscribed")){
-                        MatiereVideos.ml = e ;
-                        System.out.println(e.getId());
-                        MatiereVideos m = new MatiereVideos();
-                        m.f.show();
-                    }else{
-                        
-                    }
-
-                }
-            });**/
            
-      
         show();
     }
     

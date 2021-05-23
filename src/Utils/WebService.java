@@ -64,7 +64,6 @@ public class WebService {
     
     public void addMediacament(Medicaments m){
         
-        //String url = "http://127.0.0.1:8000/ajouterjson/"+p.getNom()+ "/" +p.getCategorie()+ "/" +p.getEmail()+ "/" +p.getType()+ "/" +p.getAdresse()+ "/" +p.getDescription()+ "/" +p.getSiteWeb()+ "/" +p.getPageFacebook()+ "/" +p.getPhone();
         String url = "http://127.0.0.1:8000/AddMedicament";
         ConnectionRequest con = new ConnectionRequest();
         
@@ -87,18 +86,11 @@ public class WebService {
                     @Override
                     public void actionPerformed(NetworkEvent evt) {
                         int response = evt.getResponseCode();
-                        //byte[] data = (byte[]) evt.getMetaData();
-                        //String s = new String(data);
-                        //System.out.println(s);
-                        /**if (s.equals("Done")) {
-                            Dialog.show("Confirmation", "success", "Ok", null);
-                        } else {
-                            Dialog.show("Erreur", "vous avez déja enregistré un bon d'entrée pour cette commande", "Ok", null);
-                        }**/
+                       
                         if(response == 200){
-                            Dialog.show("Confirmation", "success", "Ok", null);
+                            Dialog.show("Confirmation", "Médicament ajouté avec succé", "Ok", null);
                         }else{
-                           Dialog.show("Erreur", "vous avez déja enregistré un bon d'entrée pour cette commande", "Ok", null); 
+                           Dialog.show("Erreur", "ce médicament existe déja", "Ok", null); 
                         }
                     }
                 });
@@ -107,12 +99,9 @@ public class WebService {
     }
     public void EditMediacament(Medicaments m){
         
-        //String url = "http://127.0.0.1:8000/ajouterjson/"+p.getNom()+ "/" +p.getCategorie()+ "/" +p.getEmail()+ "/" +p.getType()+ "/" +p.getAdresse()+ "/" +p.getDescription()+ "/" +p.getSiteWeb()+ "/" +p.getPageFacebook()+ "/" +p.getPhone();
         String url = "http://127.0.0.1:8000/EditMedicament/"+m.getId();
         ConnectionRequest con = new ConnectionRequest();
-        
-    
-    
+     
      con.setUrl(url);
      con.addRequestHeader("X-Requested-With", "XMLHttpRequest");
      
@@ -130,18 +119,11 @@ public class WebService {
                     @Override
                     public void actionPerformed(NetworkEvent evt) {
                         int response = evt.getResponseCode();
-                        //byte[] data = (byte[]) evt.getMetaData();
-                        //String s = new String(data);
-                        //System.out.println(s);
-                        /**if (s.equals("Done")) {
-                            Dialog.show("Confirmation", "success", "Ok", null);
-                        } else {
-                            Dialog.show("Erreur", "vous avez déja enregistré un bon d'entrée pour cette commande", "Ok", null);
-                        }**/
+                       
                         if(response == 200){
                             Dialog.show("Confirmation", "success", "Ok", null);
                         }else{
-                           Dialog.show("Erreur", "vous avez déja enregistré un bon d'entrée pour cette commande", "Ok", null); 
+                           Dialog.show("Erreur", "ERROR", "Ok", null); 
                         }
                     }
                 });
@@ -150,17 +132,13 @@ public class WebService {
     }
     public void DeleteMediacament(int id){
         
-        //String url = "http://127.0.0.1:8000/ajouterjson/"+p.getNom()+ "/" +p.getCategorie()+ "/" +p.getEmail()+ "/" +p.getType()+ "/" +p.getAdresse()+ "/" +p.getDescription()+ "/" +p.getSiteWeb()+ "/" +p.getPageFacebook()+ "/" +p.getPhone();
         String url = "http://127.0.0.1:8000/DeletMedicament/"+id;
         ConnectionRequest con = new ConnectionRequest();
-        
-    
-    
+   
      con.setUrl(url);
      con.addRequestHeader("X-Requested-With", "XMLHttpRequest");
      
-     
-     
+    
      con.setPost(true);
         System.out.println(url);
       con.addResponseListener(new ActionListener<NetworkEvent>() {
@@ -168,18 +146,11 @@ public class WebService {
                     @Override
                     public void actionPerformed(NetworkEvent evt) {
                         int response = evt.getResponseCode();
-                        //byte[] data = (byte[]) evt.getMetaData();
-                        //String s = new String(data);
-                        //System.out.println(s);
-                        /**if (s.equals("Done")) {
-                            Dialog.show("Confirmation", "success", "Ok", null);
-                        } else {
-                            Dialog.show("Erreur", "vous avez déja enregistré un bon d'entrée pour cette commande", "Ok", null);
-                        }**/
+                       
                         if(response == 200){
                             Dialog.show("Confirmation", "success", "Ok", null);
                         }else{
-                           Dialog.show("Erreur", "vous avez déja enregistré un bon d'entrée pour cette commande", "Ok", null); 
+                           Dialog.show("Erreur", "ERROR", "Ok", null); 
                         }
                     }
                 });
@@ -213,18 +184,11 @@ public class WebService {
                     @Override
                     public void actionPerformed(NetworkEvent evt) {
                         int response = evt.getResponseCode();
-                        //byte[] data = (byte[]) evt.getMetaData();
-                        //String s = new String(data);
-                        //System.out.println(s);
-                        /**if (s.equals("Done")) {
-                            Dialog.show("Confirmation", "success", "Ok", null);
-                        } else {
-                            Dialog.show("Erreur", "vous avez déja enregistré un bon d'entrée pour cette commande", "Ok", null);
-                        }**/
+                       
                         if(response == 200){
                             Dialog.show("Confirmation", "success", "Ok", null);
                         }else{
-                           Dialog.show("Erreur", "vous avez déja enregistré un bon d'entrée pour cette commande", "Ok", null); 
+                           Dialog.show("Erreur", "ERROR", "Ok", null); 
                         }
                     }
                 });
@@ -233,7 +197,6 @@ public class WebService {
     }  
      public void EditOrdonnance(Ordonnance o){
         
-        //String url = "http://127.0.0.1:8000/ajouterjson/"+p.getNom()+ "/" +p.getCategorie()+ "/" +p.getEmail()+ "/" +p.getType()+ "/" +p.getAdresse()+ "/" +p.getDescription()+ "/" +p.getSiteWeb()+ "/" +p.getPageFacebook()+ "/" +p.getPhone();
         String url = "http://127.0.0.1:8000/EditOrdonnance/"+o.getId();
         ConnectionRequest con = new ConnectionRequest();
         
@@ -259,18 +222,11 @@ public class WebService {
                     @Override
                     public void actionPerformed(NetworkEvent evt) {
                         int response = evt.getResponseCode();
-                        //byte[] data = (byte[]) evt.getMetaData();
-                        //String s = new String(data);
-                        //System.out.println(s);
-                        /**if (s.equals("Done")) {
-                            Dialog.show("Confirmation", "success", "Ok", null);
-                        } else {
-                            Dialog.show("Erreur", "vous avez déja enregistré un bon d'entrée pour cette commande", "Ok", null);
-                        }**/
+                        
                         if(response == 200){
                             Dialog.show("Confirmation", "success", "Ok", null);
                         }else{
-                           Dialog.show("Erreur", "vous avez déja enregistré un bon d'entrée pour cette commande", "Ok", null); 
+                           Dialog.show("Erreur", "ERROR", "Ok", null); 
                         }
                     }
                 });
@@ -279,16 +235,11 @@ public class WebService {
     }  
      public void DeleteOrdonnance(int id){
         
-        //String url = "http://127.0.0.1:8000/ajouterjson/"+p.getNom()+ "/" +p.getCategorie()+ "/" +p.getEmail()+ "/" +p.getType()+ "/" +p.getAdresse()+ "/" +p.getDescription()+ "/" +p.getSiteWeb()+ "/" +p.getPageFacebook()+ "/" +p.getPhone();
         String url = "http://127.0.0.1:8000/DeletOrdonnance/"+id;
         ConnectionRequest con = new ConnectionRequest();
         
-    
-    
      con.setUrl(url);
      con.addRequestHeader("X-Requested-With", "XMLHttpRequest");
-     
-     
      
      con.setPost(true);
         System.out.println(url);
@@ -297,18 +248,11 @@ public class WebService {
                     @Override
                     public void actionPerformed(NetworkEvent evt) {
                         int response = evt.getResponseCode();
-                        //byte[] data = (byte[]) evt.getMetaData();
-                        //String s = new String(data);
-                        //System.out.println(s);
-                        /**if (s.equals("Done")) {
-                            Dialog.show("Confirmation", "success", "Ok", null);
-                        } else {
-                            Dialog.show("Erreur", "vous avez déja enregistré un bon d'entrée pour cette commande", "Ok", null);
-                        }**/
+                       
                         if(response == 200){
                             Dialog.show("Confirmation", "success", "Ok", null);
                         }else{
-                           Dialog.show("Erreur", "vous avez déja enregistré un bon d'entrée pour cette commande", "Ok", null); 
+                           Dialog.show("Erreur", "ERROR", "Ok", null); 
                         }
                     }
                 });
@@ -317,18 +261,12 @@ public class WebService {
     }
      public void FlagNotifications(String link){
         
-        //String url = "http://127.0.0.1:8000/ajouterjson/"+p.getNom()+ "/" +p.getCategorie()+ "/" +p.getEmail()+ "/" +p.getType()+ "/" +p.getAdresse()+ "/" +p.getDescription()+ "/" +p.getSiteWeb()+ "/" +p.getPageFacebook()+ "/" +p.getPhone();
         String url = link;
         ConnectionRequest con = new ConnectionRequest();
-        
-    
-    
+   
      con.setUrl(url);
      con.addRequestHeader("X-Requested-With", "XMLHttpRequest");
-     
-     
-     
-     
+   
      con.setPost(true);
         System.out.println(url);
       con.addResponseListener(new ActionListener<NetworkEvent>() {
@@ -336,20 +274,11 @@ public class WebService {
                     @Override
                     public void actionPerformed(NetworkEvent evt) {
                         int response = evt.getResponseCode();
-                        //byte[] data = (byte[]) evt.getMetaData();
-                        //String s = new String(data);
-                        //System.out.println(s);
-                        /**if (s.equals("Done")) {
-                            Dialog.show("Confirmation", "success", "Ok", null);
-                        } else {
-                            Dialog.show("Erreur", "vous avez déja enregistré un bon d'entrée pour cette commande", "Ok", null);
-                        }**/
+                      
                         if(response == 200){
                             System.out.println("Success");
-                            //Dialog.show("Confirmation", "success", "Ok", null);
                         }else{
                             System.out.println("Error");
-                           //Dialog.show("Erreur", "vous avez déja enregistré un bon d'entrée pour cette commande", "Ok", null); 
                         }
                     }
                 });

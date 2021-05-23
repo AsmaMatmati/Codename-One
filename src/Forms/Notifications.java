@@ -57,14 +57,8 @@ public class Notifications extends BaseForm{
             ImageViewer imv = null;
             Image img;
             EncodedImage encoded = null;
-            
-            
             Label b = new Label(e);
-            
-          
-            
             photos.add(b);
-            
             
             try {
                 ScaleImageLabel sep = new ScaleImageLabel(Image.createImage("/Separator.png"));
